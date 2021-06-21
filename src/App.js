@@ -17,11 +17,12 @@ class App extends React.Component {
   }
 
   moveCar(car, side) {
-    this.setState({
+    this.setState((prevState) => ({
       cars: {
+        ...prevState.cars,
         [car]: side
       },
-    })
+    }));
   }
 
   render() {
